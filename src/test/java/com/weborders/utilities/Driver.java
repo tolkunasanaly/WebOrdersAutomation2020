@@ -1,4 +1,5 @@
 package com.weborders.utilities;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,7 +29,7 @@ public class Driver {
                     chromeOptions.addArguments("--start-maximized");
                     driver = new ChromeDriver(chromeOptions);
                     break;
-                case "chromeHeadless":
+                case "chromeheadless":
                     //to run chrome without interface (headless mode)
                     WebDriverManager.chromedriver().version("79").setup();
                     ChromeOptions options = new ChromeOptions();
