@@ -20,7 +20,7 @@ public abstract class AbstractBasePage {
     @FindBy(tagName = "h1")
     protected WebElement pageLogo;
 
-    public String getPageLogoTest(){
+    public String getPageLogoText(){
         return pageLogo.getText();
     }
 
@@ -30,6 +30,10 @@ public abstract class AbstractBasePage {
         PageFactory.initElements(driver, this);
     }
 
+    /**
+     * Specify component name as a parameter, like: View all products or Orders
+     * @param component
+     */
     public void navigateTo(String component){
         String locator = "//a[text()='"+component+"']";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
